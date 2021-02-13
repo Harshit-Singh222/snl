@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="pics/dice1.png" type="image/x-icon" />
+    <title>Snake and Ladder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="startScreen">
+        <h1>Snake And Ladder</h1>
+        <div id="startb">
+            <button class="startbtn" id="sbtn1" onclick="hide1()">SinglePlayer</button>
+            <button class="startbtn" id="sbtn2" onclick="hide2()">MultiPlayer</button>
+        </div>
+    </div>
+    <div id="secondScreen">
+        <div id="secondb">
+            <button class="secondbtn" onclick="hide3()" id="sndbtn1">2 Player</button>
+            <button class="secondbtn" onclick="hide4()" id="sndbtn2">3 Players</button>
+            <button class="secondbtn" onclick="hide5()" id="sndbtn3">4 Players</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="dices">
+            <div class="dice" id="dieArea1">
+                <h3 id="firstPlayerName">Red Turn</h3>
+                <img id="diceImg1" src="pics/dices.png">
+                <br>
+                <button class="button" onclick="roll1()" id="firstDice">Roll Dice</button>
+            </div>
+            <div class="dice" id="dieArea2">
+                <h3 id="secondPlayerName">Blue Turn</h3>
+                <img id="diceImg2" src="pics/dices.png">
+                <br>
+                <button class="button" onclick="roll2()" id="secondDice" disabled>Roll Dice</button>
+            </div>
+            <div class="dice" id="dieArea3">
+                <h3 id="thirdPlayerName">Green Turn</h3>
+                <img id="diceImg3" src="pics/dices.png">
+                <br>
+                <button class="button" onclick="roll3()" id="thirdDice" disabled>Roll Dice</button>
+            </div>
+            <div class="dice" id="dieArea4">
+                <h3 id="fourthPlayerName">yellow Turn</h3>
+                <img id="diceImg4" src="pics/dices.png">
+                <br>
+                <button class="button" onclick="roll4()" id="fourthDice" disabled>Roll Dice</button>
+            </div>
+        </div>
+        <div id="leaderboard">
+            <h2>LeaderBoard</h2>
+            <h3 id="first" class="leaders"></h3>
+            <h3 id="second" class="leaders"></h3>
+            <h3 id="third" class="leaders"></h3>
+            <h3 id="fourth" class="leaders"></h3>
+            <button id="reset" onclick="reload()">RESTART</button>
+        </div>
+        <div id="boardSpace">
+            <div id="board">
+                <div class="players" id="red"></div>
+                <div class="players" id="blue"></div>
+                <div class="players" id="green"></div>
+                <div class="players" id="yellow"></div>
+
+                <img src="pics/Ladder1.png" id="L1" class="ladder1">
+                <img src="pics/Ladder1.png" id="L2" class="ladder1">
+                <img src="pics/Ladder1.png" id="L3" class="ladder1">
+
+                <img src="pics/Ladder3.png" id="L4" class="ladder3">
+                <img src="pics/Ladder3.png" id="L5" class="ladder3">
+                <img src="pics/Ladder3.png" id="L6" class="ladder3">
+
+                <img src="pics/Ladder2.png" id="L7" class="ladder2">
+                <img src="pics/Ladder2.png" id="L8" class="ladder2">
+
+                <img src="pics/snake1.png" id="s1">
+                <img src="pics/snake2.png" id="s2">
+                <img src="pics/snake3.png" id="s3">
+                <img src="pics/snake4.png" id="s4">
+                <img src="pics/snake5.png" id="s5">
+
+                <div class="box">100</div>
+                <div class="box">99</div>
+                <div class="box">98</div>
+                <div class="box">97</div>
+                <div class="box">96</div>
+                <div class="box">95</div>
+                <div class="box">94</div>
+                <div class="box">93</div>
+                <div class="box">92</div>
+                <div class="box">91</div>
+
+                <div class="box">81</div>
+                <div class="box">82</div>
+                <div class="box">83</div>
+                <div class="box">84</div>
+                <div class="box">85</div>
+                <div class="box">86</div>
+                <div class="box">87</div>
+                <div class="box">88</div>
+                <div class="box">89</div>
+                <div class="box">90</div>
+
+                <div class="box">80</div>
+                <div class="box">79</div>
+                <div class="box">78</div>
+                <div class="box">77</div>
+                <div class="box">76</div>
+                <div class="box">75</div>
+                <div class="box">74</div>
+                <div class="box">73</div>
+                <div class="box">72</div>
+                <div class="box">71</div>
+
+                <div class="box">61</div>
+                <div class="box">62</div>
+                <div class="box">63</div>
+                <div class="box">64</div>
+                <div class="box">65</div>
+                <div class="box">66</div>
+                <div class="box">67</div>
+                <div class="box">68</div>
+                <div class="box">69</div>
+                <div class="box">70</div>
+
+                <div class="box">60</div>
+                <div class="box">59</div>
+                <div class="box">58</div>
+                <div class="box">57</div>
+                <div class="box">55</div>
+                <div class="box">54</div>
+                <div class="box">56</div>
+                <div class="box">53</div>
+                <div class="box">52</div>
+                <div class="box">51</div>
+
+                <div class="box">41</div>
+                <div class="box">42</div>
+                <div class="box">43</div>
+                <div class="box">44</div>
+                <div class="box">45</div>
+                <div class="box">46</div>
+                <div class="box">47</div>
+                <div class="box">48</div>
+                <div class="box">49</div>
+                <div class="box">50</div>
+
+                <div class="box">40</div>
+                <div class="box">39</div>
+                <div class="box">38</div>
+                <div class="box">37</div>
+                <div class="box">36</div>
+                <div class="box">35</div>
+                <div class="box">34</div>
+                <div class="box">33</div>
+                <div class="box">32</div>
+                <div class="box">31</div>
+
+                <div class="box">21</div>
+                <div class="box">22</div>
+                <div class="box">23</div>
+                <div class="box">24</div>
+                <div class="box">25</div>
+                <div class="box">26</div>
+                <div class="box">27</div>
+                <div class="box">28</div>
+                <div class="box">29</div>
+                <div class="box">30</div>
+
+                <div class="box">20</div>
+                <div class="box">19</div>
+                <div class="box">18</div>
+                <div class="box">17</div>
+                <div class="box">16</div>
+                <div class="box">15</div>
+                <div class="box">14</div>
+                <div class="box">13</div>
+                <div class="box">12</div>
+                <div class="box">11</div>
+
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">3</div>
+                <div class="box">4</div>
+                <div class="box">5</div>
+                <div class="box">6</div>
+                <div class="box">7</div>
+                <div class="box">8</div>
+                <div class="box">9</div>
+                <div class="box">10</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
